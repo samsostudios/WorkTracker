@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B28F7622BB56E100FFF44A /* CustomTabBar.swift */; };
 		22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4E07B22B93E4E00BD2E0B /* Colors.swift */; };
 		22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */; };
 		22DAAB0622A7704B00CB79F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAAB0522A7704B00CB79F0 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B28F7622BB56E100FFF44A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		22C4E07B22B93E4E00BD2E0B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCollectionViewCell.swift; sourceTree = "<group>"; };
 		22DAAB0222A7704B00CB79F0 /* WorkTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */,
 				22C4E07B22B93E4E00BD2E0B /* Colors.swift */,
 				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
+				22B28F7622BB56E100FFF44A /* CustomTabBar.swift */,
 			);
 			path = WorkTracker;
 			sourceTree = "<group>";
@@ -181,7 +184,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WorkTracker/Pods-WorkTracker-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
+				"${BUILT_PRODUCTS_DIR}/BulletinBoard/BLTNBoard.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -190,7 +193,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BLTNBoard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -244,6 +247,7 @@
 			files = (
 				22DAAB0622A7704B00CB79F0 /* AppDelegate.swift in Sources */,
 				22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */,
+				22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
 				22DAAB2022A7796C00CB79F0 /* WorkInputViewController.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
@@ -397,10 +401,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZFR3XB85;
 				INFOPLIST_FILE = WorkTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SamHenry.WorkTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -416,10 +417,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZFR3XB85;
 				INFOPLIST_FILE = WorkTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = SamHenry.WorkTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

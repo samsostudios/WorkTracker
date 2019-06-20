@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First-->
+        <!--Jobs-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="WorkViewController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,20 +32,20 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-J1-0vc">
-                                <rect key="frame" x="0.0" y="250" width="414" height="646"/>
+                                <rect key="frame" x="0.0" y="300" width="414" height="596"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fgo-JA-zWK">
-                                    <size key="itemSize" width="215" height="226"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Fgo-JA-zWK">
+                                    <size key="itemSize" width="167" height="250"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="jobCell" id="0z1-MG-up5" customClass="JobsCollectionViewCell" customModule="WorkTracker" customModuleProvider="target">
-                                        <rect key="frame" x="99.5" y="0.0" width="215" height="226"/>
+                                        <rect key="frame" x="15" y="15" width="167" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="215" height="226"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="167" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Little Man" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkt-NP-4Lj">
@@ -58,11 +58,6 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.15294117647058825" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="15"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -70,14 +65,41 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="t3E-ma-lXk"/>
                                 </connections>
                             </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dF-Oz-XNX">
+                                <rect key="frame" x="30" y="164" width="354" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.1529411765" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="In Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXP-CL-4Ue">
+                                <rect key="frame" x="43" y="188" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNU-DT-Vad">
+                                <rect key="frame" x="319" y="718" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.10980392156862745" green="0.12156862745098039" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Fd7-OE-5ri"/>
+                                    <constraint firstAttribute="height" constant="75" id="vqx-5J-tPa"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
+                                <state key="normal" image="plus"/>
+                                <connections>
+                                    <action selector="addBiuttonAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CgO-bg-iaV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="hNK-WH-aOO" secondAttribute="trailing" constant="20" id="0BC-tL-XpS"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="JNU-DT-Vad" secondAttribute="trailing" constant="20" id="AaS-5o-5zC"/>
                             <constraint firstItem="hNK-WH-aOO" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="10" id="BsN-Cl-vUZ"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="GKW-eK-aOW"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="Hec-sf-cRu"/>
-                            <constraint firstItem="oTr-J1-0vc" firstAttribute="top" secondItem="hgD-Ls-FMV" secondAttribute="bottom" id="Vmy-ry-suF"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="JNU-DT-Vad" secondAttribute="bottom" constant="20" id="LzQ-1E-bly"/>
+                            <constraint firstItem="oTr-J1-0vc" firstAttribute="top" secondItem="hgD-Ls-FMV" secondAttribute="bottom" constant="50" id="Vmy-ry-suF"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="iv9-gz-a1q"/>
                             <constraint firstAttribute="bottom" secondItem="oTr-J1-0vc" secondAttribute="bottom" id="jZY-I9-qVw"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="lPb-CN-J1p"/>
@@ -85,8 +107,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Jobs" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="addButton" destination="JNU-DT-Vad" id="kGH-5h-T7w"/>
+                        <outlet property="bannerImageView" destination="7dF-Oz-XNX" id="gn1-w2-WV9"/>
                         <outlet property="jobsCollectionView" destination="oTr-J1-0vc" id="CZH-Ch-l8N"/>
                         <outlet property="profileImageView" destination="hNK-WH-aOO" id="6ei-7P-YMu"/>
                     </connections>
@@ -143,10 +167,15 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA" customClass="CustomTabBar" customModule="WorkTracker" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                <real key="value" value="50"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -161,6 +190,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="gradient" width="1000" height="1000"/>
+        <image name="plus" width="149.5" height="149.5"/>
         <image name="profileImage" width="1280" height="1600"/>
         <image name="second" width="30" height="30"/>
     </resources>
