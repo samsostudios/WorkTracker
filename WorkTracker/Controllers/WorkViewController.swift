@@ -13,7 +13,7 @@ import BLTNBoard
 
 class WorkViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    var projects = [projectObject]()
+    var projects = [project]()
     
     var currentBackground = (name: "Dimmed", style: BLTNBackgroundViewStyle.dimmed)
     
@@ -94,7 +94,7 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
             let addedObject = snapshot.value as! NSDictionary
             print(addedObject["name"]!)
             let addedName = addedObject["name"] as! String
-            let objectToAppend = projectObject(name: addedName)
+            let objectToAppend = project(name: addedName)
             self.projects.append(objectToAppend)
             self.jobsCollectionView.reloadData()
         }
@@ -150,7 +150,7 @@ extension WorkViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-class projectObject {
+class project {
     let name: String
     
     init(name: String) {
