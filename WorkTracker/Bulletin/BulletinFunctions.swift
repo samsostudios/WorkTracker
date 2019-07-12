@@ -22,11 +22,13 @@ enum BulletinFunctions {
         page.textInputHandler = { (item, text) in
             print("Text", text!)
             
-            let uuid = UUID().uuidString
-            print(uuid)
+            let hours = 0
+            let minutes = 0
+            let projectTime = ["Hours": hours, "Minutes": minutes]
             
             let projectDBRef = Database.database().reference().child("Projects").child(text!)
-            projectDBRef.child("name").setValue(text)
+            projectDBRef.child("Name").setValue(text)
+            projectDBRef.child("Time").setValue(projectTime)
             
         }
         page.actionHandler = { (item: BLTNActionItem) in

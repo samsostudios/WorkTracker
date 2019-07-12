@@ -22,6 +22,7 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         return BLTNItemManager(rootItem: addProjectPage)
     }()
     
+    @IBOutlet weak var gradientImageView: UIImageView!
     @IBOutlet weak var bannerImageView: UIImageView!
 
     @IBOutlet weak var profileImageView: UIImageView!
@@ -65,6 +66,9 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         addButton.layer.shadowOpacity = 0.1
         addButton.layer.masksToBounds = false
         
+        //Hero Setup
+        gradientImageView.hero.id = "gradientBG"
+        
         //Firebase Data Capture
         let projectsDBRef = Database.database().reference().child("Projects")
 //        projectsDBRef.observeSingleEvent(of: .value) {
@@ -92,12 +96,17 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
 //            print("SNAP", snapshot.value)
             
             let addedObject = snapshot.value as! NSDictionary
-            print(addedObject["name"]!)
-            let addedName = addedObject["name"] as! String
+            print(addedObject["Name"]!)
+            let addedName = addedObject["Name"] as! String
             let objectToAppend = project(name: addedName)
             self.projects.append(objectToAppend)
             self.jobsCollectionView.reloadData()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //Navbar setup
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     func showBulletin() {
@@ -113,6 +122,16 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         bulletinManager.showBulletin(above: self)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            print("SEGUE")
+            let cellSelected = jobsCollectionView?.indexPath(for: sender as! JobsCollectionViewCell)
+            let projectDetail = segue.destination as! WorkDetailViewController
+            
+            projectDetail.projectName = self.projects[((cellSelected?.row)!)].name
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.projects.count
     }

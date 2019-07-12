@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Jobs-->
+        <!--Work View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="WorkViewController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -48,18 +48,34 @@
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Little Man" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkt-NP-4Lj">
-                                                    <rect key="frame" x="12" y="20" width="101" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hkt-NP-4Lj">
+                                                    <rect key="frame" x="10" y="10" width="118" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="cRf-vn-2ZL">
+                                                    <rect key="frame" x="11" y="95" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="hua-46-t7t">
+                                                    <rect key="frame" x="140" y="62" width="20" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="Kse-3l-q7I"/>
+                                                        <constraint firstAttribute="height" constant="30" id="rG7-Ib-hI7"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.15294117647058825" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hua-46-t7t" secondAttribute="trailing" constant="10" id="CvP-tL-KDi"/>
+                                            <constraint firstItem="hua-46-t7t" firstAttribute="top" secondItem="0z1-MG-up5" secondAttribute="topMargin" constant="10" id="zFZ-KP-5zT"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="cellLabel" destination="Hkt-NP-4Lj" id="REp-TO-GBG"/>
+                                            <segue destination="twI-8o-x03" kind="show" identifier="showDetail" id="ExR-bN-xmB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -69,7 +85,7 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="eJM-YY-Ofl">
-                                <rect key="frame" x="354" y="64" width="40" height="40"/>
+                                <rect key="frame" x="354" y="108" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="2lQ-eH-EIK"/>
                                     <constraint firstAttribute="height" constant="40" id="ZFh-hl-qVh"/>
@@ -108,32 +124,57 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Jobs" image="first" id="acW-dT-cKf"/>
+                    <navigationItem key="navigationItem" id="ob5-Zn-1dU"/>
                     <connections>
                         <outlet property="addButton" destination="JNU-DT-Vad" id="kGH-5h-T7w"/>
                         <outlet property="bannerImageView" destination="7dF-Oz-XNX" id="gn1-w2-WV9"/>
+                        <outlet property="gradientImageView" destination="hgD-Ls-FMV" id="Mhc-zp-gcN"/>
                         <outlet property="jobsCollectionView" destination="oTr-J1-0vc" id="CZH-Ch-l8N"/>
                         <outlet property="profileImageView" destination="eJM-YY-Ofl" id="8EE-Uo-KNN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="1489.8550724637682" y="-320.08928571428572"/>
         </scene>
-        <!--Work Input View Controller-->
-        <scene sceneID="z3f-Ge-bgA">
+        <!--Work Detail View Controller-->
+        <scene sceneID="kXw-Ut-ErZ">
             <objects>
-                <viewController id="6gL-ss-gff" customClass="WorkInputViewController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xLd-fQ-yqd">
+                <viewController id="twI-8o-x03" customClass="WorkDetailViewController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="us8-ns-VNB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="zYB-yw-bEm">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="yaF-we-gYa"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrU-5u-jAH">
+                                <rect key="frame" x="20" y="100" width="71" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="RKQ-0g-ald"/>
+                        <constraints>
+                            <constraint firstItem="zYB-yw-bEm" firstAttribute="trailing" secondItem="RJr-RI-vn1" secondAttribute="trailing" id="Sfa-F8-yVA"/>
+                            <constraint firstItem="zYB-yw-bEm" firstAttribute="top" secondItem="us8-ns-VNB" secondAttribute="top" id="Ueq-SK-3xr"/>
+                            <constraint firstItem="zYB-yw-bEm" firstAttribute="leading" secondItem="RJr-RI-vn1" secondAttribute="leading" id="t5V-rI-WfC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RJr-RI-vn1"/>
                     </view>
+                    <connections>
+                        <outlet property="gradientImageView" destination="zYB-yw-bEm" id="BFs-bd-EKB"/>
+                        <outlet property="projectLabel" destination="OrU-5u-jAH" id="r0v-UH-IBd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="07E-FD-IBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVK-mE-iof" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1527.536231884058" y="-320.08928571428572"/>
+            <point key="canvasLocation" x="2228" y="-320"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -174,7 +215,7 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="HrD-W4-z4z" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
@@ -182,8 +223,32 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
+        <!--Jobs-->
+        <scene sceneID="moK-b3-e1J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HrD-W4-z4z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Jobs" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uxg-Cv-y9E">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="wKU-ao-Xm0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dD-q7-VAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Menu" width="269.5" height="220.5"/>
+        <image name="Stopwatch" width="273" height="327"/>
         <image name="first" width="30" height="30"/>
         <image name="gradient" width="1000" height="1000"/>
         <image name="plus" width="149.5" height="149.5"/>

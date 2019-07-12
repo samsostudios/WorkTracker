@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C32E622D82B6B001634ED /* GradientMaker.swift */; };
+		2275CDC322D8FE0B008A2C21 /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */; };
 		2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */; };
 		2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */; };
 		2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946E22D7F77500D94175 /* BulletinFunctions.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		224C32E622D82B6B001634ED /* GradientMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMaker.swift; sourceTree = "<group>"; };
+		2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
 		2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
 		2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		2278946E22D7F77500D94175 /* BulletinFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFunctions.swift; sourceTree = "<group>"; };
@@ -71,10 +73,9 @@
 		224C32E822D82D54001634ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2275CDC122D8FDDA008A2C21 /* ProjectTab */,
 				22DAAB0522A7704B00CB79F0 /* AppDelegate.swift */,
-				22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */,
 				22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */,
-				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -86,6 +87,16 @@
 				22DAAB0B22A7704B00CB79F0 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2275CDC122D8FDDA008A2C21 /* ProjectTab */ = {
+			isa = PBXGroup;
+			children = (
+				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
+				22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */,
+				2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */,
+			);
+			path = ProjectTab;
 			sourceTree = "<group>";
 		};
 		2278946722D7ECAE00D94175 /* Bulletin */ = {
@@ -290,6 +301,7 @@
 				22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */,
 				2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */,
 				22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */,
+				2275CDC322D8FE0B008A2C21 /* WorkDetailViewController.swift in Sources */,
 				2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
