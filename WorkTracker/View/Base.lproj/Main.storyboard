@@ -48,31 +48,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="182"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="cRf-vn-2ZL">
+                                                    <rect key="frame" x="11" y="95" width="20" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hkt-NP-4Lj">
-                                                    <rect key="frame" x="10" y="10" width="118" height="50"/>
+                                                    <rect key="frame" x="11" y="14" width="107" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Stopwatch" translatesAutoresizingMaskIntoConstraints="NO" id="cRf-vn-2ZL">
-                                                    <rect key="frame" x="11" y="95" width="20" height="20"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="hua-46-t7t">
+                                                    <rect key="frame" x="138" y="13" width="20" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="hua-46-t7t">
-                                                    <rect key="frame" x="140" y="62" width="20" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="Kse-3l-q7I"/>
-                                                        <constraint firstAttribute="height" constant="30" id="rG7-Ib-hI7"/>
-                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.15294117647058825" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="hua-46-t7t" secondAttribute="trailing" constant="10" id="CvP-tL-KDi"/>
-                                            <constraint firstItem="hua-46-t7t" firstAttribute="top" secondItem="0z1-MG-up5" secondAttribute="topMargin" constant="10" id="zFZ-KP-5zT"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="cellLabel" destination="Hkt-NP-4Lj" id="REp-TO-GBG"/>
                                             <segue destination="twI-8o-x03" kind="show" identifier="showDetail" id="ExR-bN-xmB"/>
@@ -104,6 +97,12 @@
                                     <action selector="addBiuttonAction:" destination="9pv-A4-QxB" eventType="touchUpInside" id="CgO-bg-iaV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tq5-mc-zBw">
+                                <rect key="frame" x="20" y="70" width="294" height="35"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
+                                <color key="textColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -115,11 +114,14 @@
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="gq6-g1-eCm"/>
                             <constraint firstItem="7dF-Oz-XNX" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="lYC-xB-SFH"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="oBI-zT-K7r"/>
+                            <constraint firstItem="Tq5-mc-zBw" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="ogh-L0-W7x"/>
                             <constraint firstItem="7dF-Oz-XNX" firstAttribute="top" secondItem="hgD-Ls-FMV" secondAttribute="bottom" constant="-75" id="ryK-vi-6SG"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="top" secondItem="7dF-Oz-XNX" secondAttribute="bottom" id="rzq-xR-eup"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="sq4-Im-xDF"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="u4X-l1-Krf"/>
+                            <constraint firstItem="Tq5-mc-zBw" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="70" id="uCo-VP-yBq"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="vl4-AJ-fnr"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Tq5-mc-zBw" secondAttribute="trailing" constant="100" id="xkr-Bj-pYw"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="yAu-Au-gfl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -129,6 +131,7 @@
                         <outlet property="addButton" destination="JNU-DT-Vad" id="kGH-5h-T7w"/>
                         <outlet property="bannerImageView" destination="7dF-Oz-XNX" id="gn1-w2-WV9"/>
                         <outlet property="gradientImageView" destination="hgD-Ls-FMV" id="Mhc-zp-gcN"/>
+                        <outlet property="headerLabel" destination="Tq5-mc-zBw" id="w6l-Th-ivt"/>
                         <outlet property="jobsCollectionView" destination="oTr-J1-0vc" id="CZH-Ch-l8N"/>
                         <outlet property="profileImageView" destination="eJM-YY-Ofl" id="8EE-Uo-KNN"/>
                     </connections>

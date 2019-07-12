@@ -24,7 +24,8 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var gradientImageView: UIImageView!
     @IBOutlet weak var bannerImageView: UIImageView!
-
+    @IBOutlet weak var headerLabel: UILabel!
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var jobsCollectionView: UICollectionView!
     
@@ -46,9 +47,11 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.tabBarController?.tabBar.layer.cornerRadius = 15
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
+        //User icon setup
         let profHeight = profileImageView.frame.height
         profileImageView.layer.cornerRadius = profHeight/2
         
+        //Overview Section setup
         bannerImageView.layer.cornerRadius = 10
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
@@ -69,26 +72,39 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         //Hero Setup
         gradientImageView.hero.id = "gradientBG"
         
+        //Date Info
+        let date = Date()
+        print("DATE", date)
+        let calendar = Calendar.current
+        print("CAL", calendar)
+        print(calendar.component(.hour, from: date))
+        
+        let hour = calendar.component(.hour, from: date)
+//        let hour =  10
+//        if ((hour <= 5) || (hour >= 17)) {
+//            print("Evening")
+//        }
+        switch hour {
+        case 0 ... 4:
+            print("evening")
+            headerLabel.text = "Good Evening, Sam"
+        case 5 ... 11:
+            print("morning")
+            headerLabel.text = "Good Morning, Sam"
+        case 12 ... 16:
+            print("afternoon")
+            headerLabel.text = "Good Afternoon, Sam"
+        case 17 ... 24:
+            print("evening")
+            headerLabel.text = "Good Evening, Sam"
+        default:
+            print("default")
+        }
+        
+//        if (hour > 5 )
+        
         //Firebase Data Capture
         let projectsDBRef = Database.database().reference().child("Projects")
-//        projectsDBRef.observeSingleEvent(of: .value) {
-//            snapshot in
-//
-////            print("SNAP", snapshot)
-//            let projectsObject = snapshot.value as! NSDictionary
-//
-//            for (_, value) in projectsObject {
-////                print(item)
-//                let projectValue = value as! NSDictionary
-//
-////                print(projectValue["name"]!)
-//                let projectName = projectValue["name"] as! String
-//                let newObject = projectObject(name: projectName)
-//                self.projects.append(newObject)
-//                print(self.projects)
-//                self.jobsCollectionView.reloadData()
-//            }
-//        }
         
         projectsDBRef.observe(.childAdded) {
             snapshot in
