@@ -88,14 +88,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		2278946722D7ECAE00D94175 /* Bulliten */ = {
+		2278946722D7ECAE00D94175 /* Bulletin */ = {
 			isa = PBXGroup;
 			children = (
 				2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */,
 				2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */,
 				2278946E22D7F77500D94175 /* BulletinFunctions.swift */,
 			);
-			path = Bulliten;
+			path = Bulletin;
 			sourceTree = "<group>";
 		};
 		22DAAAF922A7704B00CB79F0 = {
@@ -120,7 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				224C32E522D82B4E001634ED /* CustomClasses */,
-				2278946722D7ECAE00D94175 /* Bulliten */,
+				2278946722D7ECAE00D94175 /* Bulletin */,
 				224C32E822D82D54001634ED /* Controllers */,
 				224C32E922D82DBE001634ED /* View */,
 				22DAAB1922A771DB00CB79F0 /* GoogleService-Info.plist */,
