@@ -8,19 +8,31 @@
 
 import UIKit
 import Firebase
-import FloatingPanel
+//import FloatingPanel
 import Hero
+import BLTNBoard
 
 class WorkViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
     
-    @IBOutlet weak var bannerImageView: UIImageView!
+    var currentBackground = (name: "Dimmed", style: BLTNBackgroundViewStyle.dimmed)
     
+    lazy var bulletinManager: BLTNItemManager = {
+       let addProjectPage = BulletinFunctions.makeTextFieldPage()
+        return BLTNItemManager(rootItem: addProjectPage)
+    }()
+    
+    
+    
+    @IBOutlet weak var bannerImageView: UIImageView!
+
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var jobsCollectionView: UICollectionView!
     
     @IBOutlet weak var addButton: UIButton!
     @IBAction func addBiuttonAction(_ sender: UIButton) {
-        
+        print("Add tapped")
+//        makeTextFieldPage()
+        showBulletin()
     }
     
     override func viewDidLoad() {
@@ -52,19 +64,21 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         addButton.layer.shadowOpacity = 0.1
         addButton.layer.masksToBounds = false
         
-//        let floaty = Floaty()
-//        floaty.addItem("Hello, World!", icon: UIImage(named: "plus")!)
-//        self.view.addSubview(floaty)
-        
-//        let date = Date()
-//        let calendar = Calendar.current
-//        let amPM = calendar.component(.era, from: date)
-//        let hour = calendar.component(.hour, from: date)
-//        let minutes = calendar.component(.minute, from: date)
-//        let seconds = calendar.component(.second, from: date)
-//        print("DATE", calendar.identifier)
-       
-        
+    }
+    
+    func showBulletin() {
+
+        //        Uncomment to customize interface
+        //        bulletinManager.cardCornerRadius = 22
+        //        bulletinManager.edgeSpacing = .none
+        //        bulletinManager.allowsSwipeInteraction = false
+        //        bulletinManager.hidesHomeIndicator = true
+        let bltnColor = Colors.darkSecondary as UIColor
+        bulletinManager.backgroundColor = bltnColor
+        bulletinManager.backgroundViewStyle = currentBackground.style
+        bulletinManager.showBulletin(above: self)
+//        bulletinManager.backgroundColor = Colors.darkPrimary
+
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -100,3 +114,12 @@ extension WorkViewController: UICollectionViewDelegateFlowLayout {
         
     }
 }
+
+//class TextFieldBulletinPage: BLTNPageItem {
+//    var nameTextField: UITextField!
+//
+//    override func makeViewsUnderDescription(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
+//        nameTextField = interfaceBuilder.makeTextField(placeholder: "Project Name", returnKey: .done, delegate: (self as! UITextFieldDelegate))
+//        return [nameTextField]
+//    }
+//}

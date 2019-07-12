@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */; };
+		2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */; };
+		2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946E22D7F77500D94175 /* BulletinFunctions.swift */; };
 		22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B28F7622BB56E100FFF44A /* CustomTabBar.swift */; };
 		22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4E07B22B93E4E00BD2E0B /* Colors.swift */; };
 		22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
+		2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
+		2278946E22D7F77500D94175 /* BulletinFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFunctions.swift; sourceTree = "<group>"; };
 		22B28F7622BB56E100FFF44A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		22C4E07B22B93E4E00BD2E0B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -52,6 +58,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2278946722D7ECAE00D94175 /* Bulliten */ = {
+			isa = PBXGroup;
+			children = (
+				2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */,
+				2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */,
+				2278946E22D7F77500D94175 /* BulletinFunctions.swift */,
+			);
+			path = Bulliten;
+			sourceTree = "<group>";
+		};
 		22DAAAF922A7704B00CB79F0 = {
 			isa = PBXGroup;
 			children = (
@@ -73,8 +89,8 @@
 		22DAAB0422A7704B00CB79F0 /* WorkTracker */ = {
 			isa = PBXGroup;
 			children = (
+				2278946722D7ECAE00D94175 /* Bulliten */,
 				22DAAB0522A7704B00CB79F0 /* AppDelegate.swift */,
-				22DAAB0E22A7704C00CB79F0 /* Assets.xcassets */,
 				22DAAB1322A7704C00CB79F0 /* Info.plist */,
 				22DAAB1922A771DB00CB79F0 /* GoogleService-Info.plist */,
 				22DAAB1022A7704C00CB79F0 /* LaunchScreen.storyboard */,
@@ -85,6 +101,7 @@
 				22C4E07B22B93E4E00BD2E0B /* Colors.swift */,
 				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
 				22B28F7622BB56E100FFF44A /* CustomTabBar.swift */,
+				22DAAB0E22A7704C00CB79F0 /* Assets.xcassets */,
 			);
 			path = WorkTracker;
 			sourceTree = "<group>";
@@ -247,11 +264,14 @@
 			files = (
 				22DAAB0622A7704B00CB79F0 /* AppDelegate.swift in Sources */,
 				22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */,
+				2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */,
 				22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */,
+				2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
 				22DAAB2022A7796C00CB79F0 /* WorkInputViewController.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
 				22DAAB1E22A7735200CB79F0 /* ExpensesViewController.swift in Sources */,
+				2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,7 +421,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZFR3XB85;
 				INFOPLIST_FILE = WorkTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SamHenry.WorkTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -417,7 +441,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 64ZFR3XB85;
 				INFOPLIST_FILE = WorkTracker/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = SamHenry.WorkTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
