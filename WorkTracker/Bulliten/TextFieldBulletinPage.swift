@@ -23,17 +23,15 @@ class TextFieldBulletinPage: FeedbackPageBLTNItem {
     @objc public var textInputHandler: ((BLTNActionItem, String?) -> Void)? = nil
     
     override func makeViewsUnderDescription(with interfaceBuilder: BLTNInterfaceBuilder) -> [UIView]? {
-        let textFieldColor = Colors.darkPrimary
-        let placeholderTextColor = Colors.lightBlue
-        let textColor = Colors.lightPrimary
         
         textField = interfaceBuilder.makeTextField(placeholder: "First and Last Name", returnKey: .done, delegate: self)
-        textField.backgroundColor = textFieldColor
-        textField.textColor = textColor
+        textField.backgroundColor = Colors.darkPrimary
+        textField.textColor = Colors.lightPrimary
         textField.tintColor = Colors.seafoam
-        textField.attributedPlaceholder = NSAttributedString(string: "Project Name", attributes: [NSAttributedString.Key.foregroundColor: placeholderTextColor])
+        textField.attributedPlaceholder = NSAttributedString(string: "Project Name", attributes: [NSAttributedString.Key.foregroundColor: Colors.grey])
         textField.layer.cornerRadius = 15
         textField.frame.size.height = 100
+        textField.heightAnchor.constraint(equalToConstant: 100)
         return [textField]
     }
     

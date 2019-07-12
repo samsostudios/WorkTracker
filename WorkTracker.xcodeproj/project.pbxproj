@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C32E622D82B6B001634ED /* GradientMaker.swift */; };
 		2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */; };
 		2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */; };
 		2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946E22D7F77500D94175 /* BulletinFunctions.swift */; };
@@ -20,11 +21,11 @@
 		22DAAB1A22A771DB00CB79F0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22DAAB1922A771DB00CB79F0 /* GoogleService-Info.plist */; };
 		22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */; };
 		22DAAB1E22A7735200CB79F0 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */; };
-		22DAAB2022A7796C00CB79F0 /* WorkInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DAAB1F22A7796C00CB79F0 /* WorkInputViewController.swift */; };
 		E5A7DD6B4CFCDAB9FBCE30AE /* Pods_WorkTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3324DC388A55AEFEEC9267DC /* Pods_WorkTracker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		224C32E622D82B6B001634ED /* GradientMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMaker.swift; sourceTree = "<group>"; };
 		2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
 		2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		2278946E22D7F77500D94175 /* BulletinFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFunctions.swift; sourceTree = "<group>"; };
@@ -40,7 +41,6 @@
 		22DAAB1922A771DB00CB79F0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
-		22DAAB1F22A7796C00CB79F0 /* WorkInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkInputViewController.swift; sourceTree = "<group>"; };
 		3324DC388A55AEFEEC9267DC /* Pods_WorkTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WorkTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B46610AA702ECBBEF6C46BDD /* Pods-WorkTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkTracker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WorkTracker/Pods-WorkTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		D59DA11179CF8DD042FEB0C9 /* Pods-WorkTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkTracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkTracker/Pods-WorkTracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,6 +58,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		224C32E522D82B4E001634ED /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				224C32E622D82B6B001634ED /* GradientMaker.swift */,
+				22C4E07B22B93E4E00BD2E0B /* Colors.swift */,
+				22B28F7622BB56E100FFF44A /* CustomTabBar.swift */,
+			);
+			path = CustomClasses;
+			sourceTree = "<group>";
+		};
+		224C32E822D82D54001634ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				22DAAB0522A7704B00CB79F0 /* AppDelegate.swift */,
+				22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */,
+				22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */,
+				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		224C32E922D82DBE001634ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22DAAB1022A7704C00CB79F0 /* LaunchScreen.storyboard */,
+				22DAAB0B22A7704B00CB79F0 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2278946722D7ECAE00D94175 /* Bulliten */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,18 +119,12 @@
 		22DAAB0422A7704B00CB79F0 /* WorkTracker */ = {
 			isa = PBXGroup;
 			children = (
+				224C32E522D82B4E001634ED /* CustomClasses */,
 				2278946722D7ECAE00D94175 /* Bulliten */,
-				22DAAB0522A7704B00CB79F0 /* AppDelegate.swift */,
-				22DAAB1322A7704C00CB79F0 /* Info.plist */,
+				224C32E822D82D54001634ED /* Controllers */,
+				224C32E922D82DBE001634ED /* View */,
 				22DAAB1922A771DB00CB79F0 /* GoogleService-Info.plist */,
-				22DAAB1022A7704C00CB79F0 /* LaunchScreen.storyboard */,
-				22DAAB0B22A7704B00CB79F0 /* Main.storyboard */,
-				22DAAB1B22A7732C00CB79F0 /* WorkViewController.swift */,
-				22DAAB1F22A7796C00CB79F0 /* WorkInputViewController.swift */,
-				22DAAB1D22A7735200CB79F0 /* ExpensesViewController.swift */,
-				22C4E07B22B93E4E00BD2E0B /* Colors.swift */,
-				22C4E07D22B956B700BD2E0B /* JobsCollectionViewCell.swift */,
-				22B28F7622BB56E100FFF44A /* CustomTabBar.swift */,
+				22DAAB1322A7704C00CB79F0 /* Info.plist */,
 				22DAAB0E22A7704C00CB79F0 /* Assets.xcassets */,
 			);
 			path = WorkTracker;
@@ -268,9 +292,9 @@
 				22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */,
 				2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
-				22DAAB2022A7796C00CB79F0 /* WorkInputViewController.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
 				22DAAB1E22A7735200CB79F0 /* ExpensesViewController.swift in Sources */,
+				224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */,
 				2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

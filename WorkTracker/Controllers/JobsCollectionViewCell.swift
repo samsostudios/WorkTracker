@@ -10,4 +10,5 @@ import UIKit
 
 class JobsCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellLabel: UILabel!
 }
