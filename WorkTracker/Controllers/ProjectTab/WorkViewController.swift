@@ -52,8 +52,7 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         profileImageView.layer.cornerRadius = profHeight/2
         
         //Overview Section setup
-        bannerImageView.layer.cornerRadius = 10
-        
+        bannerImageView.layer.cornerRadius = 15
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
@@ -71,51 +70,56 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         //Hero Setup
         gradientImageView.hero.id = "gradientBG"
+        bannerImageView.hero.id = "bannerBG"
+        headerLabel.hero.id = "headerLBL"
         
         //Date Info
         let date = Date()
-        print("DATE", date)
         let calendar = Calendar.current
-        print("CAL", calendar)
-        print(calendar.component(.hour, from: date))
         
         let hour = calendar.component(.hour, from: date)
-//        let hour =  10
-//        if ((hour <= 5) || (hour >= 17)) {
-//            print("Evening")
-//        }
+        
         switch hour {
         case 0 ... 4:
-            print("evening")
+//            print("evening")
             headerLabel.text = "Good Evening, Sam"
         case 5 ... 11:
-            print("morning")
+//            print("morning")
             headerLabel.text = "Good Morning, Sam"
         case 12 ... 16:
-            print("afternoon")
+//            print("afternoon")
             headerLabel.text = "Good Afternoon, Sam"
         case 17 ... 24:
-            print("evening")
+//            print("evening")
             headerLabel.text = "Good Evening, Sam"
         default:
             print("default")
         }
-        
-//        if (hour > 5 )
         
         //Firebase Data Capture
         let projectsDBRef = Database.database().reference().child("Projects")
         
         projectsDBRef.observe(.childAdded) {
             snapshot in
-            
+
 //            print("SNAP", snapshot.value)
-            
-            let addedObject = snapshot.value as! NSDictionary
-            print(addedObject["Name"]!)
-            let addedName = addedObject["Name"] as! String
-            let objectToAppend = project(name: addedName)
-            self.projects.append(objectToAppend)
+
+            let snapObject = snapshot.value as! NSDictionary
+
+            //Project Names
+            print("SNAP PROJECT", snapObject["Name"]!)
+            let projectName = snapObject["Name"] as! String
+
+            //Project Times
+            print("SNAP TIME", snapObject["Time"]!)
+            let timeObject = snapObject["Time"]! as! NSDictionary
+            let projectHours = timeObject["Hours"] as! Int
+            let projectMinutes = timeObject["Minutes"] as! Int
+
+            //Update Class Array
+            let projectObeject = project(name: projectName, hours: projectHours, minutes: projectMinutes)
+            self.projects.append(projectObeject)
+
             self.jobsCollectionView.reloadData()
         }
     }
@@ -140,7 +144,6 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            print("SEGUE")
             let cellSelected = jobsCollectionView?.indexPath(for: sender as! JobsCollectionViewCell)
             let projectDetail = segue.destination as! WorkDetailViewController
             
@@ -160,13 +163,19 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-        cell.layer.shadowRadius = 6.0
-        cell.layer.shadowOpacity = 0.1
+        cell.layer.shadowRadius = 7.0
+        cell.layer.shadowOpacity = 0.2
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         
         let name = projects[indexPath.row].name
+        let hour = projects[indexPath.row].hours
+        let h = String(hour)
+        let minute = projects[indexPath.row].minutes
+        let m = String(minute)
+        
         cell.cellLabel.text = name
+        cell.timeLabel.text = h + "h " + m  + "m"
         
         return cell
     }
@@ -180,15 +189,19 @@ extension WorkViewController: UICollectionViewDelegateFlowLayout {
         let xInsets: CGFloat = 15
         let cellSpacing: CGFloat = 5
         
-        return CGSize(width: (width / columns) - (xInsets + cellSpacing), height: 200)
+        return CGSize(width: (width / columns) - (xInsets + cellSpacing), height: 175)
         
     }
 }
 
 class project {
     let name: String
+    let hours: Int
+    let minutes: Int
     
-    init(name: String) {
+    init(name: String, hours: Int, minutes: Int) {
         self.name = name
+        self.hours = hours
+        self.minutes = minutes
     }
 }

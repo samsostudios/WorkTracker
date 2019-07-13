@@ -11,4 +11,6 @@ import UIKit
 class JobsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    
 }

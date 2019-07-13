@@ -22,13 +22,17 @@ enum BulletinFunctions {
         page.textInputHandler = { (item, text) in
             print("Text", text!)
             
+            let name = text as! String
             let hours = 0
             let minutes = 0
-            let projectTime = ["Hours": hours, "Minutes": minutes]
+            let newProject = ["Name": name, "Time": ["Hours": hours, "Minutes": minutes]] as [String : Any]
+            
+            print("NEW P", newProject["Time"])
             
             let projectDBRef = Database.database().reference().child("Projects").child(text!)
-            projectDBRef.child("Name").setValue(text)
-            projectDBRef.child("Time").setValue(projectTime)
+            projectDBRef.setValue(newProject)
+//            projectDBRef.child("Name").setValue(text)
+//            projectDBRef.child("Time").setValue(projectTime)
             
         }
         page.actionHandler = { (item: BLTNActionItem) in
