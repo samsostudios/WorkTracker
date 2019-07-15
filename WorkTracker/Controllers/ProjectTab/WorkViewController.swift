@@ -41,6 +41,11 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         view.backgroundColor = Colors.darkSecondary
         
+        //Navbar setup
+        let backButton = UIBarButtonItem()
+        backButton.title = " "
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
         //Tabbar setup
         self.tabBarController?.tabBar.barTintColor = Colors.darkPrimary
         self.tabBarController?.tabBar.layer.masksToBounds = true
