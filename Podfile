@@ -12,5 +12,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Hero'
 pod 'BulletinBoard'
+pod 'JTAppleCalendar'
+pod 'Charts'
 
 end

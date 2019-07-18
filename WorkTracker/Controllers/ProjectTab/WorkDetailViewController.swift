@@ -15,12 +15,14 @@ class WorkDetailViewController: UIViewController {
     @IBOutlet weak var projectLabel: UILabel!
     @IBOutlet weak var gradientImageView: UIImageView!
     @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var startTimerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.darkSecondary
         projectLabel.text = projectName
+        
         //Gradient Image Setup
         gradientImageView.layer.cornerRadius = 15
         
@@ -35,9 +37,6 @@ class WorkDetailViewController: UIViewController {
 
         bannerImageView.layer.shadowColor = UIColor.black.cgColor
         bannerImageView.layer.shadowOffset = CGSize(width: 1.0, height: 4.0)
-//        bannerImageView.layer.shadowRadius = 7.0
-//        bannerImageView.layer.shadowOpacity = 0.2
-//        bannerImageView.layer.masksToBounds = false
         
         //Navbar setup
         self.navigationController?.setNavigationBarHidden(false, animated: true)
@@ -50,5 +49,16 @@ class WorkDetailViewController: UIViewController {
         bannerImageView.hero.id = "bannerBG"
         projectLabel.hero.id = "headerLBL"
         
+        //Start button setup
+        let buttonHeight = startTimerButton.frame.height
+        startTimerButton.layer.cornerRadius = buttonHeight/2
+        
+        let buttonBlur = UIVisualEffectView(effect: UIBlurEffect(style:
+            UIBlurEffect.Style.dark))
+        buttonBlur.frame = startTimerButton.bounds
+        buttonBlur.isUserInteractionEnabled = false
+        buttonBlur.layer.cornerRadius = buttonHeight/2
+        buttonBlur.clipsToBounds = true
+        startTimerButton.insertSubview(buttonBlur, at: 0)
     }
 }
