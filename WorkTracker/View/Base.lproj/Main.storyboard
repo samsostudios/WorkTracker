@@ -32,7 +32,7 @@
                                 </constraints>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oTr-J1-0vc">
-                                <rect key="frame" x="0.0" y="280" width="414" height="533"/>
+                                <rect key="frame" x="0.0" y="280" width="414" height="616"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Fgo-JA-zWK">
                                     <size key="itemSize" width="178" height="182"/>
@@ -156,20 +156,20 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="JNU-DT-Vad" secondAttribute="trailing" constant="20" id="6Du-MI-6I1"/>
+                            <constraint firstItem="oTr-J1-0vc" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="6II-iT-VMm"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="JNU-DT-Vad" secondAttribute="bottom" constant="20" id="E1S-XU-kIE"/>
                             <constraint firstItem="eJM-YY-Ofl" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="Es4-Xb-Qft"/>
+                            <constraint firstAttribute="bottom" secondItem="oTr-J1-0vc" secondAttribute="bottom" id="I0Q-q3-Pyz"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="7dF-Oz-XNX" secondAttribute="trailing" constant="19" id="VI8-MA-9MU"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="eJM-YY-Ofl" secondAttribute="trailing" constant="20" id="cYX-cv-ca0"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="gq6-g1-eCm"/>
+                            <constraint firstItem="oTr-J1-0vc" firstAttribute="top" secondItem="7dF-Oz-XNX" secondAttribute="bottom" constant="5" id="jZf-bc-ld9"/>
+                            <constraint firstItem="oTr-J1-0vc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="kVc-kZ-vDh"/>
                             <constraint firstItem="7dF-Oz-XNX" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="lYC-xB-SFH"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="oBI-zT-K7r"/>
                             <constraint firstItem="Tq5-mc-zBw" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="20" id="ogh-L0-W7x"/>
                             <constraint firstItem="7dF-Oz-XNX" firstAttribute="top" secondItem="hgD-Ls-FMV" secondAttribute="bottom" constant="-75" id="ryK-vi-6SG"/>
-                            <constraint firstItem="oTr-J1-0vc" firstAttribute="top" secondItem="7dF-Oz-XNX" secondAttribute="bottom" constant="5" id="rzq-xR-eup"/>
-                            <constraint firstItem="oTr-J1-0vc" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="sq4-Im-xDF"/>
-                            <constraint firstItem="oTr-J1-0vc" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="u4X-l1-Krf"/>
                             <constraint firstItem="Tq5-mc-zBw" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" constant="70" id="uCo-VP-yBq"/>
-                            <constraint firstItem="oTr-J1-0vc" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="vl4-AJ-fnr"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Tq5-mc-zBw" secondAttribute="trailing" constant="100" id="xkr-Bj-pYw"/>
                             <constraint firstItem="hgD-Ls-FMV" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="yAu-Au-gfl"/>
                         </constraints>
@@ -261,7 +261,7 @@
             </objects>
             <point key="canvasLocation" x="2227.536231884058" y="-320.08928571428572"/>
         </scene>
-        <!--Second-->
+        <!--Income-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="IncomeViewController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -299,7 +299,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Income" image="IncomeTabIcon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="chartView" destination="T2d-wE-QNm" id="W8g-X7-8eq"/>
                     </connections>
@@ -308,14 +308,26 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="359.59821428571428"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Bubble Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA" customClass="CustomTabBar" customModule="WorkTracker" customModuleProvider="target">
+                <tabBarController id="49e-Tb-3d3" customClass="BubbleTabBarController" customModule="WorkTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="height">
+                                <real key="value" value="100"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.27450980390000002" green="0.90980392160000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="HrD-W4-z4z" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
@@ -326,11 +338,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Jobs-->
+        <!--Projects-->
         <scene sceneID="moK-b3-e1J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HrD-W4-z4z" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Jobs" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Projects" image="projectTabIcon" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="backButton" backIndicatorTransitionMaskImage="backButton" id="uxg-Cv-y9E">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -351,14 +363,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IncomeTabIcon" width="23.5" height="12"/>
         <image name="LBtoDBGradient" width="1000" height="1000"/>
         <image name="Menu" width="269.5" height="220.5"/>
         <image name="Stopwatch" width="273" height="327"/>
         <image name="backButton" width="18" height="23"/>
-        <image name="first" width="30" height="30"/>
         <image name="gradient" width="1000" height="1000"/>
         <image name="plus" width="149.5" height="149.5"/>
         <image name="profileImage" width="1280" height="1600"/>
-        <image name="second" width="30" height="30"/>
+        <image name="projectTabIcon" width="19" height="22.5"/>
     </resources>
 </document>

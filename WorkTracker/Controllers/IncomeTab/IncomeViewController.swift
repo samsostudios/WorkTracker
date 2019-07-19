@@ -15,7 +15,7 @@ class IncomeViewController: UIViewController {
     
     let months = ["Jan", "Feb", "Mar", "Apr"]
     
-    let data = [200, 100, 500, 300]
+    let data = [200, 300, 576, 75]
 //    let tags = [0, 1, 2, 3]
     
     var chartData: [ChartDataEntry] = []
@@ -29,12 +29,19 @@ class IncomeViewController: UIViewController {
     }
     
     func setChartData(tags: [String], data: [Int]){
-        print("TAGS", tags)
+        
+        print(tags.count)
         
         for i in 0 ..< data.count {
             let dataPoint = ChartDataEntry(x: Double(i), y: Double(data[i]))
             chartData.append(dataPoint)
         }
+        
+        let dataMin: Int = data.min()!
+        let dataMax: Int = data.max()!
+        let dataAverage: Int = (dataMax + dataMin) / 2
+        let dataDiff: Int = dataMax - dataMin
+        print("Data", dataMin, dataMax, dataAverage, dataDiff)
         
         print("DATA", chartData)
         let chartDataSet = LineChartDataSet(entries: chartData, label: "")
@@ -42,14 +49,15 @@ class IncomeViewController: UIViewController {
         chartData.addDataSet(chartDataSet)
         chartData.setDrawValues(true)
         chartDataSet.colors = [Colors.lightPrimary]
-        chartDataSet.setCircleColor(Colors.lightSecondary)
-        chartDataSet.circleHoleColor = Colors.lightSecondary
+        chartDataSet.setCircleColor(Colors.lightPrimary)
+        chartDataSet.circleHoleColor = Colors.lightPrimary
         chartDataSet.mode = .cubicBezier
         chartDataSet.cubicIntensity = 0.2
         chartDataSet.circleRadius = 5.0
         chartDataSet.valueFont = UIFont(name: "Avenir Next", size: 15.0)!
-        chartDataSet.highlightEnabled = false
-        chartDataSet.lineWidth = 4.0
+        chartDataSet.valueColors = [Colors.lightPrimary]
+        chartDataSet.highlightEnabled = true
+        chartDataSet.lineWidth = 3.0
         
         let formatter = chartFormatter()
         formatter.setValues(values: tags)
@@ -57,19 +65,41 @@ class IncomeViewController: UIViewController {
         
         xaxis.valueFormatter = formatter
         
+        chartView.legend.enabled = false
         chartView.xAxis.labelPosition = .bottom
-        chartView.leftAxis.enabled = false
+//        chartView.leftAxis.enabled = false
         chartView.rightAxis.enabled = false
 //        chartView.xAxis.enabled = false
         chartView.xAxis.labelPosition = .bottom
         chartView.xAxis.drawGridLinesEnabled = false
         chartView.xAxis.valueFormatter = xaxis.valueFormatter
-        chartView.legend.enabled = false
         chartView.xAxis.granularityEnabled = true
         chartView.xAxis.granularity = 1.0
         chartView.xAxis.labelFont = UIFont(name: "AvenirNext-Bold", size: 12.0)!
         chartView.xAxis.labelTextColor = Colors.lightPrimary
-        chartDataSet.lineWidth = 2
+        chartView.xAxis.spaceMin = 0.2
+        chartView.xAxis.spaceMax = 0.2
+        chartView.xAxis.axisLineWidth = 0.0
+
+        chartView.leftAxis.axisLineWidth = 0.0
+        chartView.leftAxis.axisMinimum = Double(dataMin - 100)
+        chartView.leftAxis.axisMaximum = Double(dataMax + 100)
+        chartView.leftAxis.granularityEnabled = true
+        chartView.leftAxis.granularity = Double(dataMax/2)
+        chartView.leftAxis.labelFont = UIFont(name: "AvenirNext-Bold", size: 12.0)!
+        chartView.leftAxis.labelTextColor = Colors.lightPrimary
+        chartView.leftAxis.axisLineWidth = 0.0
+        chartView.leftAxis.drawGridLinesEnabled = true
+        chartView.leftAxis.gridLineWidth = 1.0
+        chartView.leftAxis.gridLineDashLengths = [10.0]
+        chartView.leftAxis.gridColor = Colors.lightPrimary
+        chartView.leftAxis.gridLineCap = .round
+        
+        let numberOfPoints = Double(tags.count)
+        
+        let animationSpeed = numberOfPoints * 0.06
+        print("speed", animationSpeed)
+        chartView.animate(xAxisDuration: animationSpeed, yAxisDuration: animationSpeed, easingOption: .easeInSine)
         
         let gradientColors = [Colors.lightPrimary.cgColor, UIColor.clear.cgColor] as CFArray
         let colorLocations:[CGFloat] = [1.0, 0.0]
