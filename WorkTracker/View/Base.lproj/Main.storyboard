@@ -287,6 +287,41 @@
                                     <constraint firstAttribute="height" constant="300" id="ogy-fQ-UkE"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p6R-xC-fIW">
+                                <rect key="frame" x="0.0" y="496" width="414" height="317"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="133" id="yBZ-vZ-0pW" customClass="IncomeOverviewTableViewCell" customModule="WorkTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="133"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yBZ-vZ-0pW" id="WVb-FD-eo9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="132.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sir-Fr-Vn7">
+                                                    <rect key="frame" x="30" y="11" width="354" height="90"/>
+                                                    <color key="backgroundColor" red="0.27450980390000002" green="0.90980392160000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Sir-Fr-Vn7" firstAttribute="bottom" secondItem="WVb-FD-eo9" secondAttribute="bottomMargin" constant="-21" id="6UR-j3-vxy"/>
+                                                <constraint firstItem="Sir-Fr-Vn7" firstAttribute="top" secondItem="WVb-FD-eo9" secondAttribute="topMargin" id="GnB-29-1GJ"/>
+                                                <constraint firstItem="Sir-Fr-Vn7" firstAttribute="leading" secondItem="WVb-FD-eo9" secondAttribute="leadingMargin" constant="10" id="cyD-c0-Lfx"/>
+                                                <constraint firstItem="Sir-Fr-Vn7" firstAttribute="trailing" secondItem="WVb-FD-eo9" secondAttribute="trailingMargin" constant="-10" id="eRI-hz-fz7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="cardView" destination="Sir-Fr-Vn7" id="pnt-YN-grl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="JlV-Tu-qNn"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="KZy-6W-g6q"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -302,6 +337,7 @@
                     <tabBarItem key="tabBarItem" title="Income" image="IncomeTabIcon" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="chartView" destination="T2d-wE-QNm" id="W8g-X7-8eq"/>
+                        <outlet property="tableView" destination="p6R-xC-fIW" id="gOt-AT-RGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

@@ -9,9 +9,10 @@
 import UIKit
 import Charts
 
-class IncomeViewController: UIViewController {
-
+class IncomeViewController: UIViewController, UITableViewDataSource {
+    
     @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var tableView: UITableView!
     
     let months = ["Jan", "Feb", "Mar", "Apr"]
     
@@ -26,6 +27,12 @@ class IncomeViewController: UIViewController {
         view.backgroundColor = Colors.darkSecondary
         
         setChartData(tags: months, data: data)
+        
+        //Table View Setup
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.rowHeight = 100.0
+        
     }
     
     func setChartData(tags: [String], data: [Int]){
@@ -110,6 +117,16 @@ class IncomeViewController: UIViewController {
         
         chartView.data = chartData
         
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath) as! IncomeOverviewTableViewCell
+
+        return cell
     }
 }
 

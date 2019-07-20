@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		222B6E0622DFFAE100DA7222 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */; };
 		224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C32E622D82B6B001634ED /* GradientMaker.swift */; };
+		2269BF2422E2DDA100846CFB /* IncomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */; };
 		2275CDC322D8FE0B008A2C21 /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */; };
 		2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */; };
 		2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		224C32E622D82B6B001634ED /* GradientMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMaker.swift; sourceTree = "<group>"; };
+		2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
 		2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
 		2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
 		2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */,
+				2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */,
 			);
 			path = IncomeTab;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				22FA786B22E187EF00D6762C /* CBTabBarButton.swift in Sources */,
 				22FA786A22E187EF00D6762C /* BubbleTabBarController.swift in Sources */,
 				22DAAB0622A7704B00CB79F0 /* AppDelegate.swift in Sources */,
+				2269BF2422E2DDA100846CFB /* IncomeOverviewTableViewCell.swift in Sources */,
 				22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */,
 				2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */,
 				222B6E0622DFFAE100DA7222 /* IncomeViewController.swift in Sources */,
