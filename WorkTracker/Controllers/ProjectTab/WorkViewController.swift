@@ -47,11 +47,10 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         //Tabbar setup
-//        self.tabBarController?.tabBar.barTintColor = .clear
-        self.tabBarController?.tabBar.layer.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0)
-        self.tabBarController?.tabBar.layer.masksToBounds = false
+        self.tabBarController?.tabBar.layer.masksToBounds = true
         self.tabBarController?.tabBar.layer.cornerRadius = 20
         self.tabBarController?.tabBar.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
         
         //User icon setup
         let profHeight = profileImageView.frame.height

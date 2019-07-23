@@ -16,7 +16,7 @@ enum BulletinFunctions {
         let page = TextFieldBulletinPage(title: "New Project")
         page.isDismissable = true
         page.descriptionText = ""
-        page.actionButtonTitle = "Create"
+        page.actionButtonTitle = "Continue"
         page.appearance.actionButtonColor = Colors.lightBlue
         
         page.textInputHandler = { (item, text) in
@@ -37,10 +37,27 @@ enum BulletinFunctions {
         }
         page.actionHandler = { (item: BLTNActionItem) in
             print("Action button tapped")
-            item.manager?.dismissBulletin(animated: true)
+//            item.manager?.dismissBulletin(animated: true)
+            item.manager?.displayNextItem()
         }
+        
+        page.next = makeRatePage()
         
         return page
         
+    }
+    
+    static func makeRatePage() -> TextFieldBulletinPage {
+        let page = TextFieldBulletinPage(title: "Set Hourly Rate")
+        page.isDismissable = true
+        page.descriptionText = ""
+        page.actionButtonTitle = "Create"
+        page.appearance.actionButtonColor = Colors.lightBlue
+        
+        page.textInputHandler = { (item, text) in
+            print(text!)
+        }
+        
+        return page
     }
 }

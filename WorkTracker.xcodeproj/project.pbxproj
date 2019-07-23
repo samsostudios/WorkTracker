@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222307B422E6D2F500E46EE3 /* TimerObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222307B322E6D2F500E46EE3 /* TimerObject.swift */; };
 		222B6E0622DFFAE100DA7222 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */; };
 		224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C32E622D82B6B001634ED /* GradientMaker.swift */; };
 		2269BF2422E2DDA100846CFB /* IncomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		222307B322E6D2F500E46EE3 /* TimerObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerObject.swift; sourceTree = "<group>"; };
 		222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		224C32E622D82B6B001634ED /* GradientMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMaker.swift; sourceTree = "<group>"; };
 		2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				224C32E622D82B6B001634ED /* GradientMaker.swift */,
 				22C4E07B22B93E4E00BD2E0B /* Colors.swift */,
 				22B28F7622BB56E100FFF44A /* CustomTabBar.swift */,
+				222307B322E6D2F500E46EE3 /* TimerObject.swift */,
 			);
 			path = CustomClasses;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				22FA786C22E187EF00D6762C /* BubbleTabBar.swift in Sources */,
 				2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
+				222307B422E6D2F500E46EE3 /* TimerObject.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
 				22DAAB1E22A7735200CB79F0 /* ExpensesViewController.swift in Sources */,
 				224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */,

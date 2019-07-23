@@ -133,7 +133,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNU-DT-Vad">
-                                <rect key="frame" x="334" y="733" width="60" height="60"/>
+                                <rect key="frame" x="334" y="713" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.10980392156862745" green="0.12156862745098039" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="1a6-dH-G5x"/>
@@ -157,7 +157,7 @@
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="JNU-DT-Vad" secondAttribute="trailing" constant="20" id="6Du-MI-6I1"/>
                             <constraint firstItem="oTr-J1-0vc" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="6II-iT-VMm"/>
-                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="JNU-DT-Vad" secondAttribute="bottom" constant="20" id="E1S-XU-kIE"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="JNU-DT-Vad" secondAttribute="bottom" constant="40" id="E1S-XU-kIE"/>
                             <constraint firstItem="eJM-YY-Ofl" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="20" id="Es4-Xb-Qft"/>
                             <constraint firstAttribute="bottom" secondItem="oTr-J1-0vc" secondAttribute="bottom" id="I0Q-q3-Pyz"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="7dF-Oz-XNX" secondAttribute="trailing" constant="19" id="VI8-MA-9MU"/>
@@ -216,6 +216,13 @@
                                     <constraint firstAttribute="height" constant="100" id="aq2-wp-NLO"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xky-TD-qg2">
+                                <rect key="frame" x="186" y="438" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IcS-b2-tRb">
                                 <rect key="frame" x="99.5" y="274" width="215" height="50"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.1529411765" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -224,6 +231,7 @@
                                     <constraint firstAttribute="height" constant="50" id="flP-ny-Brv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Start">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -232,6 +240,9 @@
                                         <integer key="value" value="30"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startTimer:" destination="twI-8o-x03" eventType="touchUpInside" id="l1b-A2-xXo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -252,6 +263,7 @@
                     </view>
                     <connections>
                         <outlet property="bannerImageView" destination="VOg-Mf-DCF" id="JGg-KL-S2h"/>
+                        <outlet property="currentTimeLabel" destination="xky-TD-qg2" id="h7j-kt-cJd"/>
                         <outlet property="gradientImageView" destination="zYB-yw-bEm" id="BFs-bd-EKB"/>
                         <outlet property="projectLabel" destination="OrU-5u-jAH" id="r0v-UH-IBd"/>
                         <outlet property="startTimerButton" destination="IcS-b2-tRb" id="AUc-5l-yah"/>
@@ -355,7 +367,7 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="height">
-                                <real key="value" value="100"/>
+                                <real key="value" value="75"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
                                 <color key="value" red="0.27450980390000002" green="0.90980392160000001" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
