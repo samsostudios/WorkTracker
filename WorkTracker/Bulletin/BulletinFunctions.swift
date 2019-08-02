@@ -10,10 +10,15 @@ import UIKit
 import BLTNBoard
 import Firebase
 
+let info: [projectInfo] = []
+var pName = ""
+var pRate = ""
+
 enum BulletinFunctions {
     static func makeTextFieldPage() -> TextFieldBulletinPage {
         
         let page = TextFieldBulletinPage(title: "New Project")
+        page.image = #imageLiteral(resourceName: "plus")
         page.isDismissable = true
         page.descriptionText = ""
         page.actionButtonTitle = "Continue"
@@ -22,23 +27,20 @@ enum BulletinFunctions {
         page.textInputHandler = { (item, text) in
             print("Text", text!)
             
-            let name = text as! String
-            let hours = 0
-            let minutes = 0
-            let newProject = ["Name": name, "Time": ["Hours": hours, "Minutes": minutes]] as [String : Any]
-            
-            print("NEW P", newProject["Time"])
-            
-            let projectDBRef = Database.database().reference().child("Projects").child(text!)
-            projectDBRef.setValue(newProject)
-//            projectDBRef.child("Name").setValue(text)
-//            projectDBRef.child("Time").setValue(projectTime)
+            pName = text!
             
         }
         page.actionHandler = { (item: BLTNActionItem) in
             print("Action button tapped")
 //            item.manager?.dismissBulletin(animated: true)
-            item.manager?.displayNextItem()
+            
+            if pName == "" {
+                print("No text")
+            }else{
+                print(pName)
+                item.manager?.displayNextItem()
+            }
+            
         }
         
         page.next = makeRatePage()
@@ -55,9 +57,43 @@ enum BulletinFunctions {
         page.appearance.actionButtonColor = Colors.lightBlue
         
         page.textInputHandler = { (item, text) in
-            print(text!)
+            
+            pRate = text!
+            
+        }
+        
+        page.actionHandler = { (item: BLTNActionItem) in
+            
+            if pRate == "" {
+                print("No text")
+            }else{
+                let name = pName
+                let rate = pRate
+                let hours = 0
+                let minutes = 0
+                let newProject = ["Name": name, "Rate": rate ,"Time": ["Hours": hours, "Minutes": minutes]] as [String : Any]
+                
+                print("NEW P", newProject)
+                
+                let projectDBRef = Database.database().reference().child("Projects").child(name)
+                
+                projectDBRef.setValue(newProject)
+                
+                item.manager?.dismissBulletin(animated: true)
+            }
+            
         }
         
         return page
+    }
+}
+
+class projectInfo {
+    let name: String
+    let rate: String
+    
+    init(name: String, rate: String) {
+        self.name = name
+        self.rate = rate
     }
 }

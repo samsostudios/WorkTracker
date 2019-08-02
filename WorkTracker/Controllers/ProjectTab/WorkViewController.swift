@@ -17,9 +17,10 @@ class WorkViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var currentBackground = (name: "Dimmed", style: BLTNBackgroundViewStyle.dimmed)
     
+    
     lazy var bulletinManager: BLTNItemManager = {
-       let addProjectPage = BulletinFunctions.makeTextFieldPage()
-        return BLTNItemManager(rootItem: addProjectPage)
+        let addProjectBulletin = BulletinFunctions.makeTextFieldPage()
+        return BLTNItemManager(rootItem: addProjectBulletin)
     }()
     
     @IBOutlet weak var gradientImageView: UIImageView!

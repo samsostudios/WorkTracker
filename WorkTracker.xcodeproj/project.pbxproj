@@ -11,9 +11,9 @@
 		222B6E0622DFFAE100DA7222 /* IncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */; };
 		224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224C32E622D82B6B001634ED /* GradientMaker.swift */; };
 		2269BF2422E2DDA100846CFB /* IncomeOverviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */; };
+		227203D222E7B25E007CA31D /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227203D022E7B25D007CA31D /* TextFieldBulletinPage.swift */; };
+		227203D322E7B25E007CA31D /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227203D122E7B25E007CA31D /* FeedbackPageBulletinItem.swift */; };
 		2275CDC322D8FE0B008A2C21 /* WorkDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */; };
-		2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */; };
-		2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */; };
 		2278946F22D7F77500D94175 /* BulletinFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2278946E22D7F77500D94175 /* BulletinFunctions.swift */; };
 		22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B28F7622BB56E100FFF44A /* CustomTabBar.swift */; };
 		22C4E07C22B93E4E00BD2E0B /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C4E07B22B93E4E00BD2E0B /* Colors.swift */; };
@@ -36,9 +36,9 @@
 		222B6E0522DFFAE100DA7222 /* IncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeViewController.swift; sourceTree = "<group>"; };
 		224C32E622D82B6B001634ED /* GradientMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientMaker.swift; sourceTree = "<group>"; };
 		2269BF2322E2DDA100846CFB /* IncomeOverviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeOverviewTableViewCell.swift; sourceTree = "<group>"; };
+		227203D022E7B25D007CA31D /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
+		227203D122E7B25E007CA31D /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		2275CDC222D8FE0B008A2C21 /* WorkDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkDetailViewController.swift; sourceTree = "<group>"; };
-		2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBulletinPage.swift; sourceTree = "<group>"; };
-		2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackPageBulletinItem.swift; sourceTree = "<group>"; };
 		2278946E22D7F77500D94175 /* BulletinFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinFunctions.swift; sourceTree = "<group>"; };
 		22B28F7622BB56E100FFF44A /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		22C4E07B22B93E4E00BD2E0B /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -125,8 +125,8 @@
 		2278946722D7ECAE00D94175 /* Bulletin */ = {
 			isa = PBXGroup;
 			children = (
-				2278946C22D7ED6400D94175 /* FeedbackPageBulletinItem.swift */,
-				2278946A22D7ED1E00D94175 /* TextFieldBulletinPage.swift */,
+				227203D122E7B25E007CA31D /* FeedbackPageBulletinItem.swift */,
+				227203D022E7B25D007CA31D /* TextFieldBulletinPage.swift */,
 				2278946E22D7F77500D94175 /* BulletinFunctions.swift */,
 			);
 			path = Bulletin;
@@ -314,13 +314,13 @@
 				22B28F7722BB56E100FFF44A /* CustomTabBar.swift in Sources */,
 				2275CDC322D8FE0B008A2C21 /* WorkDetailViewController.swift in Sources */,
 				22FA786C22E187EF00D6762C /* BubbleTabBar.swift in Sources */,
-				2278946B22D7ED1E00D94175 /* TextFieldBulletinPage.swift in Sources */,
 				22DAAB1C22A7732C00CB79F0 /* WorkViewController.swift in Sources */,
+				227203D222E7B25E007CA31D /* TextFieldBulletinPage.swift in Sources */,
 				222307B422E6D2F500E46EE3 /* TimerObject.swift in Sources */,
 				22C4E07E22B956B700BD2E0B /* JobsCollectionViewCell.swift in Sources */,
 				22DAAB1E22A7735200CB79F0 /* ExpensesViewController.swift in Sources */,
 				224C32E722D82B6B001634ED /* GradientMaker.swift in Sources */,
-				2278946D22D7ED6400D94175 /* FeedbackPageBulletinItem.swift in Sources */,
+				227203D322E7B25E007CA31D /* FeedbackPageBulletinItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
